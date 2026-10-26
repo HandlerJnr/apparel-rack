@@ -7,6 +7,6 @@
 - Review branch: preview
 - Build: npm run build
 - Output: dist
-- Production: not released; main automatic deployment is disabled in vercel.json.
+- Production: no production domains connected; auto-assignment off; main automatic deployment disabled in vercel.json.
 
 The preview branch is connected to Vercel for review deployments. Confirm the Preview environment and commit SHA in the dashboard before reviewing or sharing a build. Production promotion is a separate, explicitly authorised action.
