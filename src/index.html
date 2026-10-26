@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en-GB" class="js"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<meta name="theme-color" content="#e3e4e0">
+<meta property="og:title" content="Hangtime — Drop 07, ten pieces on one rail">
+<meta property="og:description" content="Turn a piece round, swing it on its hook, take it off the rail.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..600&amp;display=swap">
+<link rel="preload" as="image" href="/img/garments/bloom-side.webp">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="icon" href="https://assets-2-prod.whop.com/public/uploads/2026-09-30/0f83c418-75dc-47d1-a39e-dec7f0dd8579/image.png"><link rel="apple-touch-icon" href="https://assets-2-prod.whop.com/public/uploads/2026-09-30/0f83c418-75dc-47d1-a39e-dec7f0dd8579/image.png"><meta name="description" content="Store template: a one-screen apparel shop where garments hang on a rail and spin round when you hover."><title>Hangtime Apparel</title></head>
+<body style="background:#e3e4e0;color:#141414">
+
+<div class="announce" role="note">
+  <span>Drop 07 is on the rail</span><i></i><span>Free UK delivery over £60</span><i></i><span>Free returns within 30 days</span>
+</div>
+
+<header class="top" id="top-bar">
+  <div class="wrap top-in">
+    <a class="logo" href="#top" aria-label="Hangtime, back to the rail">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5a2.3 2.3 0 1 1 2.3 2.3c-1.2 0-2.3.8-2.3 2v1.3M2.5 18.5 12 10l9.5 8.5Z"></path></svg>
+      Hangtime
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#top">The rail</a>
+      <a href="#drop">The drop</a>
+      <a href="#studio">Studio</a>
+      <a href="#help">Help</a>
+    </nav>
+    <button class="bag-btn" type="button" id="bag-btn" aria-label="Open bag, 0 items">Bag <span class="bag-count" id="bag-count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 class="sr" id="hero-title">Hangtime, Drop 07: ten pieces on one rail.</h1>
+    <div class="wrap hero-head">
+      <p class="mono appear appear--soft is-in" style="--d:0.1s">Drop 07 — the autumn rail</p>
+      <p class="mono appear appear--soft is-in" style="--d:0.16s">10 pieces · printed in Bristol</p>
+    </div>
+
+    <div class="rack">
+      <div class="wall-type appear appear--wall is-in" style="--d:0s" aria-hidden="true">Drop 07</div>
+      <!-- The rail is written out in full so it renders with JavaScript off and in
+           static previews. Order and ids must match PRODUCTS in the script. -->
+      <div class="rail" id="rail" role="group" aria-label="The rail: ten pieces">
+        <span class="bracket bracket--l" aria-hidden="true"></span><span class="bracket bracket--r" aria-hidden="true"></span>
+        <button class="hang" style="--i:0" type="button" data-i="0" aria-label="Static Bloom Tee, £38"><span class="swing"><img class="v-side" src="/img/garments/bloom-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/bloom-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:1" type="button" data-i="1" aria-label="Night Shift Tee, £34"><span class="swing"><img class="v-side" src="/img/garments/nightshift-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/nightshift-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:2" type="button" data-i="2" aria-label="Low Tide Crewneck, £68"><span class="swing"><img class="v-side" src="/img/garments/lowtide-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/lowtide-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:3" type="button" data-i="3" aria-label="Paper Moon Long Sleeve, £46"><span class="swing"><img class="v-side" src="/img/garments/papermoon-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/papermoon-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:4" type="button" data-i="4" aria-label="Blank Canvas Tee, £28"><span class="swing"><img class="v-side" src="/img/garments/blank-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/blank-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:5" type="button" data-i="5" aria-label="Washed Slate Tee, £36"><span class="swing"><img class="v-side" src="/img/garments/slate-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/slate-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:6" type="button" data-i="6" aria-label="Field Notes Tee, £38"><span class="swing"><img class="v-side" src="/img/garments/fieldnotes-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/fieldnotes-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:7" type="button" data-i="7" aria-label="Canopy Overshirt, £85"><span class="swing"><img class="v-side" src="/img/garments/canopy-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/canopy-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:8" type="button" data-i="8" aria-label="Last Bus Hoodie, £72"><span class="swing"><img class="v-side" src="/img/garments/lastbus-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/lastbus-front.webp" alt="" draggable="false"></span></button>
+        <button class="hang" style="--i:9" type="button" data-i="9" aria-label="Good Weather Tee, £38"><span class="swing"><img class="v-side" src="/img/garments/goodweather-side.webp" alt="" draggable="false"><img class="v-front" src="/img/garments/goodweather-front.webp" alt="" draggable="false"></span></button>
+
+        <div class="tag" id="tag" aria-hidden="true">
+          <div class="tag-card">
+            <p class="tag-brand">Hangtime · Drop 07</p>
+            <p class="tag-name" id="tag-name">Static Bloom Tee</p>
+            <p class="tag-price" id="tag-price">£38</p>
+            <p class="tag-sizes" id="tag-sizes"></p>
+            <p class="tag-cta">Look closer →</p>
+          </div>
+        </div>
+        <span class="tag-string" id="tag-string" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="readout" id="readout" aria-live="polite">
+        <div><b id="readout-name">The rail</b><span id="readout-sub">Tap a piece to turn it round</span></div>
+        <button class="btn" type="button" id="readout-btn" hidden="">View</button>
+      </div>
+    </div>
+    <div class="wrap hero-foot">
+      <p class="mono hint">Hover to turn a piece · drag to swing it · click to look closer</p>
+      <a class="mono" href="#drop">The drop, itemised ↓</a>
+    </div>
+    <p class="sr" id="rail-live" aria-live="polite"></p>
+  </section>
+
+  <section class="section" id="drop" aria-labelledby="drop-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="drop-title" class="reveal is-in">The drop</h2>
+        <p class="mono reveal is-in" style="--d:0.08s">10 pieces · £28–£85 · sizes XS–XXL</p>
+      </div>
+      <p class="mono drop-motion-hint"><span class="mouse-hint">Hover to give it a swing · drag to play · click to look closer</span><span class="touch-hint">Hold or slide a piece sideways to play · tap to look closer</span></p>
+      <div class="grid">
+        <button class="card reveal is-in" style="--d:0s" type="button" data-card="0"><span class="card-art"><img src="/img/garments/bloom-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Static Bloom Tee</span><span class="card-price">£38</span></span><span class="card-sub">Tee · Off-white</span></button>
+        <button class="card reveal is-in" style="--d:0.05s" type="button" data-card="1"><span class="card-art"><img src="/img/garments/nightshift-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Night Shift Tee</span><span class="card-price">£34</span></span><span class="card-sub">Tee · Washed black</span></button>
+        <button class="card reveal is-in" style="--d:0.1s" type="button" data-card="2"><span class="card-art"><img src="/img/garments/lowtide-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Low Tide Crewneck</span><span class="card-price">£68</span></span><span class="card-sub">Crewneck · Bottle green</span></button>
+        <button class="card reveal is-in" style="--d:0.15s" type="button" data-card="3"><span class="card-art"><img src="/img/garments/papermoon-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Paper Moon Long Sleeve</span><span class="card-price">£46</span></span><span class="card-sub">Long sleeve · Black</span></button>
+        <button class="card reveal is-in" style="--d:0.2s" type="button" data-card="4"><span class="card-art"><img src="/img/garments/blank-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Blank Canvas Tee</span><span class="card-price">£28</span></span><span class="card-sub">Tee · Optic white</span></button>
+        <button class="card reveal is-in" style="--d:0s" type="button" data-card="5"><span class="card-art"><img src="/img/garments/slate-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Washed Slate Tee</span><span class="card-price">£36</span></span><span class="card-sub">Tee · Washed charcoal</span></button>
+        <button class="card reveal is-in" style="--d:0.05s" type="button" data-card="6"><span class="card-art"><img src="/img/garments/fieldnotes-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Field Notes Tee</span><span class="card-price">£38</span></span><span class="card-sub">Tee · Natural ecru</span></button>
+        <button class="card reveal is-in" style="--d:0.1s" type="button" data-card="7"><span class="card-art"><img src="/img/garments/canopy-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Canopy Overshirt</span><span class="card-price">£85</span></span><span class="card-sub">Overshirt · Leaf camo</span></button>
+        <button class="card reveal is-in" style="--d:0.15s" type="button" data-card="8"><span class="card-art"><img src="/img/garments/lastbus-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Last Bus Hoodie</span><span class="card-price">£72</span></span><span class="card-sub">Hoodie · Midnight navy</span></button>
+        <button class="card reveal is-in" style="--d:0.2s" type="button" data-card="9"><span class="card-art"><img src="/img/garments/goodweather-front.webp" alt="" loading="lazy"></span><span class="card-row"><span class="card-name">Good Weather Tee</span><span class="card-price">£38</span></span><span class="card-sub">Tee · Warm white</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="studio" aria-labelledby="studio-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="studio-title" class="reveal is-in">Studio</h2><p class="mono reveal is-in" style="--d:0.08s">Two people · one press · one rail</p></div>
+      <div class="studio-grid">
+        <div class="studio-copy reveal is-in">
+          <p>We print ten pieces at a time, hang them on one rail, and take each one down when it sells out.</p>
+          <p>Every piece is screen-printed by hand on heavyweight organic cotton, washed once so it won't shrink on you, folded, and posted in a recycled mailer. Something new goes up on the rail every Friday.</p>
+        </div>
+        <div class="labels">
+          <div class="label reveal is-in" style="--d:0.05s"><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 3h26l-3 17H5Z"></path><path d="M3.5 8c3 2 5-2 8 0s5-2 8 0 5-2 8 0"></path><text x="15" y="17" font-size="6" text-anchor="middle" fill="currentColor" stroke="none" font-family="monospace">30</text></svg><span>Wash cold, inside out</span></div>
+          <div class="label reveal is-in" style="--d:0.1s"><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="5" y="2" width="20" height="18"></rect><circle cx="15" cy="11" r="6"></circle><path d="M5 2l20 18M25 2 5 20"></path></svg><span>Don't tumble dry. Dry flat</span></div>
+          <div class="label reveal is-in" style="--d:0.15s"><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 18h24c0-6-4-11-12-11H9L6 4"></path><path d="M5 2l20 18M25 2 5 20"></path></svg><span>Don't iron the print</span></div>
+          <div class="label reveal is-in" style="--d:0.2s"><svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M15 3v16M8 7c3 2 4 5 7 5s4-3 7-5"></path></svg><span>240 gsm organic cotton</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="help" aria-labelledby="help-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="help-title" class="reveal is-in">Help</h2><p class="mono reveal is-in" style="--d:0.08s">Replies within one working day</p></div>
+      <div class="help-list reveal is-in">
+        <details><summary>Delivery</summary><p>UK orders ship within two working days by tracked post: £3.95, or free over £60. Everything is washed and folded before it goes in the mailer.</p></details>
+        <details><summary>Returns</summary><p>Send anything back within 30 days, unworn and with its tag on, and we refund you in full. UK returns are free.</p></details>
+        <details><summary>Sizing</summary><p>Our tees are cut boxy, so size down if you like a regular fit. Each piece's page says how it fits, and every size shows how many are left.</p></details>
+        <details><summary>Care</summary><p>Wash cold and inside out, dry flat, and don't iron the print. It'll last years.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="friday" id="news" aria-labelledby="news-title">
+    <div class="wrap friday-grid">
+      <div>
+        <h2 id="news-title" class="reveal is-in">The Friday list</h2>
+        <p class="reveal is-in" style="--d:0.08s">One email the night before each drop: what's going on the rail, and what's coming off it.</p>
+      </div>
+      <div class="reveal is-in" style="--d:0.12s">
+        <form class="news" id="news-form" novalidate="">
+          <label class="sr" for="news-email">Email address</label>
+          <input id="news-email" type="email" placeholder="you@example.com" autocomplete="email" required="">
+          <button class="btn" type="submit">Join</button>
+        </form>
+        <p class="news-msg" id="news-msg">No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p class="mono" style="color:var(--ink-2)">Hangtime · printed in Bristol</p></div>
+      <div><h3>Shop</h3><ul><li><a href="#top">The rail</a></li><li><a href="#drop">The drop</a></li><li><a href="#news">The Friday list</a></li></ul></div>
+      <div><h3>Help</h3><ul><li><a href="#help">Delivery</a></li><li><a href="#help">Returns</a></li><li><a href="#help">Sizing</a></li></ul></div>
+      <div><h3>Studio</h3><ul><li><a href="#studio">About</a></li><li><a href="mailto:hello@hangtime.example">hello@hangtime.example</a></li></ul></div>
+    </div>
+    <p class="foot-word" aria-hidden="true">Hangtime</p>
+    <div class="foot-legal">
+      <span>Hangtime is a demonstration brand. The garments, prices, stock and studio are fictional.</span>
+      <!-- demo:start --><span>This store is a template for Whop. <a href="https://whop.com/checkout/plan_lA5tqDBHkladA">Get it for your brand →</a></span><!-- demo:end -->
+    </div>
+  </div>
+</footer>
+
+<!-- Piece view -->
+<section class="view" id="view" role="dialog" aria-modal="true" aria-labelledby="view-name" aria-hidden="true">
+  <div class="view-stage" id="view-stage">
+    <img class="view-img" id="view-img" src="/img/garments/bloom-front.webp" alt="Static Bloom Tee" draggable="false">
+    <div class="view-nav">
+      <button type="button" id="view-prev" aria-label="Previous piece"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+      <span class="view-count" id="view-count">01 / 10</span>
+      <button type="button" id="view-next" aria-label="Next piece"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+    </div>
+  </div>
+  <div class="view-panel">
+    <button class="view-close mono" type="button" id="view-close">Close <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+    <p class="mono view-kind" id="view-kind">Drop 07 · Tee · Off-white</p>
+    <h2 class="view-name" id="view-name">Static Bloom Tee</h2>
+    <p class="view-price" id="view-price">£38</p>
+    <p class="view-meta" id="view-meta">Heavyweight 240gsm cotton, boxy fit</p>
+    <div class="sizes">
+      <div class="sizes-head"><span class="mono">Size</span><span id="view-fit">Boxy fit — size down for a regular fit.</span></div>
+      <div class="size-grid" id="size-grid"></div>
+    </div>
+    <button class="btn" type="button" id="add-btn" disabled="">Pick a size</button>
+    <div class="view-details">
+      <details><summary>Fabric &amp; fit</summary><p id="view-fabric">Heavyweight 240gsm organic cotton, garment-washed once before it ships.</p></details>
+      <details><summary>Delivery &amp; returns</summary><p>Ships in two working days, washed and folded. UK delivery £3.95, free over £60. Free returns within 30 days.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="scrim" data-close-cart=""></div>
+<aside class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Bag">
+  <div class="cart-head">
+    <strong>Your bag</strong>
+    <button class="mono" type="button" data-close-cart="" id="cart-close">Close</button>
+  </div>
+  <div class="cart-progress">
+    <p id="cart-progress-label">£60.00 away from free delivery</p>
+    <div class="bar"><i id="cart-progress-bar"></i></div>
+  </div>
+  <div class="cart-items" id="cart-items"><div class="cart-empty"><p>Your bag is empty.</p><button class="btn btn--ghost" type="button" data-close-cart="">Back to the rail</button></div></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Subtotal</span><span id="cart-subtotal">£0.00</span></div>
+    <p class="cart-note">UK delivery £3.95, free over £60. Ships in 2 working days.</p>
+    <button class="btn" type="button" id="checkout-btn" disabled="">Checkout</button>
+    <!-- demo:start -->
+    <div class="demo-card" id="demo-card" hidden="">
+      <p><strong>This is a demo store</strong> — these garments aren't real, so there's nothing to check out. Like how it works? You can have the whole store.</p>
+      <a class="btn" href="https://whop.com/checkout/plan_lA5tqDBHkladA">Get the Hangtime template — $59</a>
+    </div>
+    <p class="cart-demo">Demo store — nothing here is for sale.</p>
+    <!-- demo:end -->
+  </div>
+</aside>
+
+
+
+
+<script type="module" src="/scripts/app.js"></script></body></html>
