@@ -9,3 +9,5 @@ html,body{color:#141414;background:#e3e4e0!important}:root{--wall:#e3e4e0;--pane
 .drop-motion-hint .touch-hint{display:none}
 @media(hover:none),(pointer:coarse){.drop-motion-hint .mouse-hint{display:none}.drop-motion-hint .touch-hint{display:inline}}
 @media(prefers-reduced-motion:reduce){.drop-motion-hint{display:none}.card-art{cursor:pointer}}
+
+.wear-btn{width:100%;border:1px solid var(--ink);background:var(--ink);color:#f4f4ef;padding:15px 20px;margin:21px 0 0;display:flex;align-items:center;justify-content:space-between;font:500 12px var(--mono);letter-spacing:.05em;text-transform:uppercase}.wear-btn:hover{background:#363d34}.wear-btn span{font-size:18px}.wear-note{font:11px/1.5 var(--sans);color:var(--ink-2);margin-top:7px}.checkout-status{font-size:12px;line-height:1.6;margin-top:14px;color:var(--ink-2)}.checkout-status:empty{display:none}

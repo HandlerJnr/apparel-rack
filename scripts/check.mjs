@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS, GARMENT_META } from '../src/scripts/catalogue.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
-for (const f of ['app.js','catalogue.js','drop-motion.js','fitting-room.js']) execFileSync(process.execPath,['--check',`${root}src/scripts/${f}`]);
+for (const f of ['app.js','catalogue.js','drop-motion.js']) execFileSync(process.execPath,['--check',`${root}src/scripts/${f}`]);
 const html=await readFile(`${root}src/index.html`,'utf8');
 const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 if(new Set(ids).size!==ids.length)throw new Error('Duplicate element IDs');

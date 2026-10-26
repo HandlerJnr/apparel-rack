@@ -1,4 +1,3 @@
-import { createFittingRoom } from "./fitting-room.js";
 import { SIZES, PRODUCTS, GARMENT_META } from "./catalogue.js";
 import { initDropMotion } from "./drop-motion.js";
 
@@ -958,7 +957,6 @@ import { initDropMotion } from "./drop-motion.js";
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   document.addEventListener("keydown", function (e) {
-    if ($("fitting-room").open) return;
     if (e.key === "Escape") {
       if (body.classList.contains("cart-open")) closeCart();
       else closeView();
@@ -985,9 +983,10 @@ import { initDropMotion } from "./drop-motion.js";
     setTimeout(function () { reveals.forEach(function (el) { el.classList.add("is-in"); }); }, 4000);
   } else reveals.forEach(function (el) { el.classList.add("is-in"); });
 
-  createFittingRoom({ getCurrent: function () { return current; }, onSelect: function (i) {
-    current = i; fillView(i); if (origin === "rail") { setActive(i); markAway(i); }
-  } });
+
+  $("wear-btn").addEventListener("click", function () {
+    document.querySelector(".wear-note").textContent = "The next Wear it experience is being designed.";
+  });
 
   /* ---------------- Start ---------------- */
   measure();
