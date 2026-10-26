@@ -1,3 +1,4 @@
+import { createFittingRoom } from "./fitting-room.js";
 import { SIZES, PRODUCTS, GARMENT_META } from "./catalogue.js";
 import { initDropMotion } from "./drop-motion.js";
 
@@ -13,10 +14,6 @@ import { initDropMotion } from "./drop-motion.js";
 
   var FREE_DELIVERY = 60;
   var LOW_STOCK = 3;
-  /* On the public demo, Checkout explains that it's a demo and links to the
-     template instead of charging for fictional garments. Leave this empty
-     ("") for a real store and the bag uses the live Whop checkout below. */
-  var DEMO_CTA = "https://whop.com/checkout/plan_lA5tqDBHkladA"; /* demo:line */
 
   function $(id) { return document.getElementById(id); }
   function img(p, view) { return "/img/garments/" + p.id + "-" + view + ".webp"; }
@@ -904,7 +901,7 @@ import { initDropMotion } from "./drop-motion.js";
     checkoutBtn.disabled = count === 0;
     $("cart-progress-bar").style.width = Math.min(sub / FREE_DELIVERY, 1) * 100 + "%";
     $("cart-progress-label").textContent = sub >= FREE_DELIVERY ? "Free UK delivery unlocked" : gbp2(FREE_DELIVERY - sub) + " away from free delivery";
-    var demo = $("demo-card"); if (demo && !count) demo.hidden = true;
+    $("checkout-status").textContent = "";
     if (active >= 0) fillTag(active);
     if (!lines.length) {
       elItems.innerHTML = '<div class="cart-empty"><p>Your bag is empty.</p><button class="btn btn--ghost" type="button" data-close-cart>Back to the rail</button></div>';
@@ -933,33 +930,10 @@ import { initDropMotion } from "./drop-motion.js";
     render();
   });
 
-  /* Checkout. Posts ids, sizes and quantities only; the worker holds the
-     price list and recomputes the total. Never send prices from here. */
+  // Preview checkout stays in the project; no external sale or payment redirect.
   checkoutBtn.addEventListener("click", function () {
-    if (!lines.length || checkoutBtn.disabled) return;
-    var demoCard = $("demo-card");
-    if (DEMO_CTA && demoCard) {
-      demoCard.hidden = false;
-      demoCard.querySelector("a").focus({ preventScroll: true });
-      return;
-    }
-    var original = checkoutBtn.textContent;
-    var restore = function (msg) {
-      checkoutBtn.textContent = msg;
-      setTimeout(function () { checkoutBtn.textContent = original; checkoutBtn.disabled = lines.length === 0; }, 2600);
-    };
-    checkoutBtn.disabled = true;
-    checkoutBtn.textContent = "Preparing checkout…";
-    fetch("/api/checkout", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ items: lines.map(function (l) { return { id: l.id, size: l.size, qty: l.qty }; }) })
-    }).then(function (r) {
-      return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, status: r.status, data: d }; });
-    }).then(function (res) {
-      if (res.ok && res.data && res.data.url) { window.location.href = res.data.url; return; }
-      restore(res.status === 503 ? "Checkout not configured" : "Couldn't start checkout");
-    }).catch(function () { restore("Couldn't start checkout"); });
+    if (!lines.length) return;
+    $("checkout-status").textContent = "Checkout is not enabled during preview. Your selected pieces stay in your bag.";
   });
 
   /* ================================================================
@@ -984,6 +958,7 @@ import { initDropMotion } from "./drop-motion.js";
   window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   document.addEventListener("keydown", function (e) {
+    if ($("fitting-room").open) return;
     if (e.key === "Escape") {
       if (body.classList.contains("cart-open")) closeCart();
       else closeView();
@@ -1009,6 +984,10 @@ import { initDropMotion } from "./drop-motion.js";
     reveals.forEach(function (el) { io.observe(el); });
     setTimeout(function () { reveals.forEach(function (el) { el.classList.add("is-in"); }); }, 4000);
   } else reveals.forEach(function (el) { el.classList.add("is-in"); });
+
+  createFittingRoom({ getCurrent: function () { return current; }, onSelect: function (i) {
+    current = i; fillView(i); if (origin === "rail") { setActive(i); markAway(i); }
+  } });
 
   /* ---------------- Start ---------------- */
   measure();

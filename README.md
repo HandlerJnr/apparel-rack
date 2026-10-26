@@ -38,7 +38,8 @@ Open http://localhost:4173. `npm run dev` builds and serves in one command; reru
 - Rail: hover turns a garment; drag swings it. Touch uses the reference's tap-to-turn flow.
 - Drop: hover gives the cloth a swing; horizontal dragging plays with it. On phones, hold to jiggle or slide sideways; normal taps open details and vertical gestures scroll.
 - Reduced-motion users retain product access without the grid spring animation.
-- The bag is in memory. Checkout displays the reference demo notice; no products are sold.
+- The bag is in memory. Checkout displays an in-project preview notice; no payments or template-purchase redirects are enabled.
+- Wear it opens an illustrative 3D character preview with drag-to-turn, shape and tone controls, zoom and garment switching. It is not personal-photo AI try-on or a measured fit recommendation. See `docs/FITTING-ROOM.md`.
 - The newsletter validates an address but sends and stores nothing.
 
 ## Reference and assets
